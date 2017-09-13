@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_camera1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="不含存储地址调用相机" />
+
+        <Button
+            android:id="@+id/btn_camera2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="指定存储路径调用相机" />
+
+        <TextView
+            android:id="@+id/tv_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#bbbbbb"
+            android:gravity="center"
+            android:text="调用的方法： " />
+
+        <TextView
+            android:id="@+id/tv_fileUri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fab9b9"
+            android:gravity="center"
+            android:text="文件Uri： " />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cde0ab"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="缩略图" />
+
+            <ImageView
+                android:id="@+id/img_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#c2e9e6"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="原图" />
+
+            <ImageView
+                android:id="@+id/img_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
