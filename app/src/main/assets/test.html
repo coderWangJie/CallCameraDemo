@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>相机调用</title>
+
+    <script type="text/javascript">
+        function previewPhoto(sourceId, targetId) {
+            var url;
+            if (navigator.userAgent.indexOf("MSIE") >= 1) { // IE
+                url = document.getElementById(sourceId).value;
+            } else if(navigator.userAgent.indexOf("Firefox") > 0) { // Firefox
+                url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+            } else if(navigator.userAgent.indexOf("Chrome") > 0) { // Chrome
+                url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+            }  else if(navigator.userAgent.indexOf("Opera") > 0
+                || navigator.userAgent.indexOf("Oupeng") > 0) { // Oupeng
+                url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+            } else {
+                url = "flower_err.jpg";
+            }
+
+            window.alert("address:" + url);
+
+            var imgPre = document.getElementById(targetId);
+            imgPre.src = url;
+        }
+    </script>
 </head>
 <body>
-    <input type="file" name="camera">
+    <a href="http://www.baidu.com">去百度</a>
+
+    <br><br>
+    <img id="img" width="200px" height="300px" alt="图片预览区">
+    <br>
+    <input type="file" id="pic" accept="image/*" onchange="previewPhoto(this.id, 'img');"/>
+
+    <br><br>
     <input type="file" accept="image/*" multiple>
 </body>
 </html>
