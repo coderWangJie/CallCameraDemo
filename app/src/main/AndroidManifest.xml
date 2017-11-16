@@ -4,7 +4,9 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -19,11 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CallOnActivity" />
+        <activity
+            android:name=".CallOnActivity"
+            android:configChanges="orientation|keyboardHidden" />
         <activity android:name=".CallOnWebView" />
         <activity
             android:name=".ActivityB"
             android:launchMode="singleTop" />
+        <activity android:name=".AutoReadSMS_1" />
+        <activity android:name=".AutoReadSMS_2" />
     </application>
 
 </manifest>

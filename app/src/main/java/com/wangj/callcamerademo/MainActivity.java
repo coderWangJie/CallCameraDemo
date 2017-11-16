@@ -36,12 +36,31 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 123);
             }
         });
+
+        findViewById(R.id.btn_autoReadSMS1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AutoReadSMS_1.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn_autoReadSMS2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AutoReadSMS_2.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.e("WangJ", "requestCode: " + requestCode);
         Log.e("WangJ", "resultCode: " + resultCode);
-        Log.e("WangJ", "intent.getString: " + data.getStringExtra("name"));
+        if (requestCode == 123
+                && resultCode == 321) {
+            Log.e("WangJ", "intent.getString: " + data.getStringExtra("name"));
+        }
     }
 }

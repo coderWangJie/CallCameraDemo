@@ -43,6 +43,11 @@ public class CallOnActivity extends AppCompatActivity {
         initView();
     }
 
+//    @Override
+//    public void onConfigurationChanged(Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//    }
+
     private void initView() {
         tvMethod = (TextView) findViewById(R.id.tv_method);
         tvFileUri = (TextView) findViewById(R.id.tv_fileUri);

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,13 +16,27 @@
         android:id="@+id/btn_call_on_webview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="在WebView中调用相机" />
 
     <Button
         android:id="@+id/btn_callBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Intent存取" />
+        android:layout_marginTop="30dp"
+        android:text="startActivityForResult-onActivity机制受A->B两个Activity的LauncherMode影响" />
+
+    <Button
+        android:id="@+id/btn_autoReadSMS1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="PDU读短信" />
+
+    <Button
+        android:id="@+id/btn_autoReadSMS2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="读数据库读短信" />
 </LinearLayout>

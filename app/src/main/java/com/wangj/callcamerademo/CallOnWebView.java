@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
@@ -124,9 +125,9 @@ public class CallOnWebView extends AppCompatActivity {
         String fileName = "IMG_" + DateFormat.format("yyyyMMdd_hhmmss", Calendar.getInstance(Locale.CHINA)) + ".jpg";
         imageUri = Uri.fromFile(new File(filePath + fileName));
 
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-        startActivityForResult(intent, REQUEST_CODE);
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+//        startActivityForResult(intent, REQUEST_CODE);
 
 
         // 选择图片（不包括相机拍照）,则不用成功后发刷新图库的广播
@@ -134,6 +135,17 @@ public class CallOnWebView extends AppCompatActivity {
 //        i.addCategory(Intent.CATEGORY_OPENABLE);
 //        i.setType("image/*");
 //        startActivityForResult(Intent.createChooser(i, "Image Chooser"), REQUEST_CODE);
+
+        Intent captureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+
+        Intent Photo = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+        Intent chooserIntent = Intent.createChooser(Photo, "Image Chooser");
+        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Parcelable[]{captureIntent});
+
+        startActivityForResult(chooserIntent, REQUEST_CODE);
     }
 
     @Override
