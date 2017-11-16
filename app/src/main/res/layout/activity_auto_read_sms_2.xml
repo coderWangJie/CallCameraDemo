@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="\t\t使用说明：打开该页面后无需进行操作，直接等待短信送达即可." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自动获取短信内容：" />
+
+    <EditText
+        android:id="@+id/et_sms1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="自动反显短信"
+        android:textColor="#f0e2a742"
+        android:textColorHint="#e06b6868"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自动解析验证码：" />
+
+    <EditText
+        android:id="@+id/et_sms2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="自动反显解析得到的验证码"
+        android:textColor="#f03e9f1e"
+        android:textColorHint="#e06b6868"
+        android:textSize="18sp" />
+
+</LinearLayout>
